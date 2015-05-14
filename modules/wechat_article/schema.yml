@@ -1,0 +1,69 @@
+wechat_media:
+  pk: id
+  fields:
+    id: INT NOT NULL AUTO_INCREMENT
+    name: VARCHAR(30) NOT NULL
+    wechat_id: VARCHAR(20)
+    wechat_biz_id: VARCHAR(20)
+    color: VARCHAR(7)
+  form:
+    fields:
+      name:
+        widget: text
+        widget_conf:
+          required: 1
+      wechat_id:
+        widget: text
+        widget_conf:
+          required: 1
+      wechat_biz_id:
+        widget: text
+        widget_conf:
+          required: 1
+      color:
+        widget: text
+        widget_conf:
+          required: 1
+          size: 10
+    names:
+      en: Wechat Media
+      zh: 公众号
+
+wechat_release:
+  pk: id
+  fields:
+    id: INT NOT NULL AUTO_INCREMENT
+    wechat_media_id: INT
+    published_at: INT
+    top_story_id: INT
+  fks:
+    wechat_media_id:
+      foreign_key: wechat_media_id
+      references: wechat_media.id
+      on_delete: CASCADE
+      on_update: CASCADE
+
+wechat_article:
+  pk: id
+  fields:
+    id: INT NOT NULL AUTO_INCREMENT
+    wechat_release_id: INT
+    title: VARCHAR(256)
+    digest: VARCHAR(1024)
+    url: VARCHAR(512)
+    image: VARCHAR(256)
+    image_with_text: VARCHAR(128)
+    thumbnail: VARCHAR(70)
+    click: INT DEFAULT 0
+    is_top_story: TINYINT(1) DEFAULT 0
+  fks:
+    wechat_release_id:
+      foreign_key: wechat_release_id
+      references: wechat_release.id
+      on_delete: CASCADE
+      on_update: CASCADE
+            
+
+          
+        
+

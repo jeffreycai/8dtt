@@ -1,0 +1,109 @@
+body {
+ font-family: "Helvetica Neue",Helvetica,Arial,Tahoma,sans-serif;
+ color: #464646;
+ font-size: 15px;
+}
+.img-responsive {
+  width: 100%;
+}
+.navbar-brand {
+  padding-top: 5px;
+}
+.navbar-header h1 {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+}
+.news-list {
+  position: relative;
+}
+.news-list.plug {
+  display: block;
+  font-weight: 3em;
+  background-color: #DDD;
+  color: #AAA;
+}
+.news-list h2 {
+  font-size: 1.4em;
+  padding-bottom: 0.6em;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 5px;
+}
+.news-list h2 a:hover,
+.news-list h2 a:active,
+.news-list h2 a:visited {
+  text-decoration: none;
+}
+.news-list a {
+  color: #464646;
+}
+.news-list ol {
+  padding-left: 0;
+  height: 375px;
+  overflow: hidden;
+}
+.news-list ol li {
+  margin-bottom: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.news-list ol li.top-story {
+  white-space: normal;
+  text-overflow: string;
+  display: block;
+  position: relative;
+}
+.news-list ol li.top-story span {
+  display: block;
+  background-color: rgba(0,0,0,0.6);
+  color: #FFF;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 4px 4px;
+  max-height: 50px;
+  width: 100%;
+}
+.news-list .more {
+  text-align: right;
+}
+.news-list h3 {
+  text-align: center;
+  margin-top: 0;
+}
+.news-list h3 span {
+  padding: 3px;
+  border-radius: 2px;
+  font-size: 13px;
+  background-color: #CCC;
+  color: #FFF;
+  position: relative;
+}
+#body {
+  margin-bottom: 20px;
+}
+#footer {
+  border-top: 1px solid #DDD;
+  padding-top: 15px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+#footer small {
+  color: #999;
+}
+#footer .glyphicon-heart {
+  color: #D0021B;
+}
+#footer .glyphicon-heart span {
+  display: none;
+}
+body.releases .navbar {
+  margin-bottom: 0px;
+}
+.jumbotron  h1 {
+  text-align: center;
+  color: #FFF;
+  font-size: 2em;
+  font-weight: bold;
+}

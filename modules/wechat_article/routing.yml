@@ -1,0 +1,41 @@
+routing:
+  
+  goto:
+    path: ^\/wechat\-article\/goto\/(\d+)\/?$
+    isSecure: 0
+    i18n: 0
+    controller: wechat_article/goto
+
+  admin_wechat_media_list:
+    path: ^\/admin\/wechat_media\/list\/?$
+    isSecure: 1
+    i18n: 1
+    controller: wechat_article/backend/wechat_media_list
+  admin_wechat_media_edit:
+    path: ^\/admin\/wechat_media\/edit\/(\d+)\/?$
+    isSecure: 1
+    i18n: 1
+    controller: wechat_article/backend/wechat_media_edit
+  admin_wechat_media_create:
+    path: ^\/admin\/wechat_media\/create\/?$
+    isSecure: 1
+    i18n: 1
+    controller: wechat_article/backend/wechat_media_create
+  admin_wechat_media_delete:
+    path: ^\/admin\/wechat_media\/delete\/(\d+)\/?$
+    isSecure: 1
+    i18n: 0
+    controller: wechat_article/backend/wechat_media_delete
+    
+    
+    
+  admin_wechat_media_import:
+    path: ^\/admin\/wechat_media\/import\/?$
+    isSecure: 1
+    i18n: 1
+    controller: wechat_article/backend/wechat_media_import
+  admin_wechat_media_export:
+    path: ^\/admin\/wechat_media\/export\/?$
+    isSecure: 1
+    i18n: 1
+    controller: wechat_article/backend/wechat_media_export

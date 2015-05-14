@@ -1,0 +1,31 @@
+wechat_media:
+  1:
+    id: 1
+    name: '今日悉尼'
+    wechat_id: sydtoday
+    wechat_biz_id: MjM5NDAwNDEyMA
+    color: '#ED1B24'
+  2:
+    id: 2
+    name: '微悉尼'
+    wechat_id: wesydney
+    wechat_biz_id: MjM5MzAyMzM2MA
+    color: '#3F93D0'
+  3:
+    id: 3
+    name: '悉尼印象'
+    wechat_id: xiniyx
+    wechat_biz_id: MzA4MTQzMTIwMQ
+    color: '#3FA5C3'
+  4:
+    id: 4
+    name: '澳洲新足迹中文网站'
+    wechat_id: oursteps_com_au
+    wechat_biz_id: MjM5MTgxNzAyMA
+    color: '#de6014'
+  5:
+    id: 5
+    name: '滴答澳洲站'
+    wechat_id: aozhoukid
+    wechat_biz_id: MjM5NTk2NjcyMg
+    color: '#542785'
