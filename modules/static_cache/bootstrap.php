@@ -24,7 +24,7 @@ if (ENV == 'prod' && !is_cli()) {
   if ($file = shell_exec('find ' . $file . '*')) {
     $file = trim($file);
     
-    $tokens = explode('_', basename($file));
+    $tokens = explode('_', basename($file, ".php"));
     $expire = $tokens[1];
 
     if (time() > $expire) {
@@ -32,7 +32,7 @@ if (ENV == 'prod' && !is_cli()) {
       $static_cache_enabled = true;
       ob_start();
     } else {
-      echo file_get_contents($file);
+      require($file);
       exit;
     }
 
