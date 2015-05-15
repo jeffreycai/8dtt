@@ -8,6 +8,7 @@ include_once MODULESROOT . DS . 'core' . DS . 'includes' . DS . 'classes' . DS .
  * - wechat_id
  * - wechat_biz_id
  * - color
+ * - weight
  */
 class BaseWechatMedia extends DBObject {
   /**
@@ -58,6 +59,12 @@ class BaseWechatMedia extends DBObject {
    public function getColor() {
      return $this->getDbFieldColor();
    }
+   public function setWeight($var) {
+     $this->setDbFieldWeight($var);
+   }
+   public function getWeight() {
+     return $this->getDbFieldWeight();
+   }
 
   
   
@@ -83,6 +90,7 @@ CREATE TABLE IF NOT EXISTS `wechat_media` (
   `wechat_id` VARCHAR(20) ,
   `wechat_biz_id` VARCHAR(20) ,
   `color` VARCHAR(7) ,
+  `weight` TINYINT(2) DEFAULT 0 ,
   PRIMARY KEY (`id`)
 )
 ENGINE = InnoDB

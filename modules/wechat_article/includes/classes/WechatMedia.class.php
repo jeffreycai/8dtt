@@ -29,4 +29,19 @@ class WechatMedia extends BaseWechatMedia {
   public function getLatestReleases($limit) {
     return WechatRelease::getLatestReleases($limit, $this->getId());
   }
+  
+  static function findAll($weight = 'weight') {
+    global $mysqli;
+    $query = "SELECT * FROM wechat_media" . ($weight ? " ORDER BY $weight" : "");
+    $result = $mysqli->query($query);
+    
+    $rtn = array();
+    while ($result && $b = $result->fetch_object()) {
+      $obj= new WechatMedia();
+      DBObject::importQueryResultToDbObject($b, $obj);
+      $rtn[] = $obj;
+    }
+    
+    return $rtn;
+  }
 }

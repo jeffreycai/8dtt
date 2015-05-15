@@ -23,7 +23,7 @@
             'release' => $release
         ));
       ?>
-      <p class="more"><a href="<?php echo uri('media/' . $media->getWechatId()) ?>">过往文章 &raquo;</a></p>
+      <p class="more"><small><a href="<?php echo uri('media/' . $media->getWechatId()) ?>"><span style="color:<?php echo $media->getColor(); ?>"><?php echo $media->getName() ?></span>过往文章 &raquo;</a></small></p>
     </div>
 <?php endforeach; ?>
 

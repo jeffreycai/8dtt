@@ -40,7 +40,9 @@ if (isset($_POST['submit'])) {
     Message::register(new Message(Message::DANGER, i18n(array("en" => "Max length for color is 10", "zh" => "color 不能超过10个字符"))));
     $error_flag = true;
   }
-  /// proceed submission
+  
+  // validation for $weight
+  $weight = isset($_POST["weight"]) ? strip_tags($_POST["weight"]) : null;  /// proceed submission
   
   // proceed for $name
   $object->setName($name);
@@ -53,6 +55,9 @@ if (isset($_POST['submit'])) {
   
   // proceed for $color
   $object->setColor($color);
+  
+  // proceed for $weight
+  $object->setWeight($weight);
   if ($error_flag == false) {
     if ($object->save()) {
       Message::register(new Message(Message::SUCCESS, i18n(array("en" => "Record saved", "zh" => "记录保存成功"))));

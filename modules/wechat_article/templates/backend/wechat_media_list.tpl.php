@@ -23,6 +23,7 @@
                 <th>wechat_id</th>
                 <th>wechat_biz_id</th>
                 <th>color</th>
+                <th>weight</th>
                 <th>Actions</th>
       </tr>
   </thead>
@@ -34,6 +35,7 @@
             <td><?php echo $object->getWechatId() ?></td>
             <td><?php echo $object->getWechatBizId() ?></td>
             <td><?php echo $object->getColor() ?></td>
+            <td><?php echo $object->getWeight() ?></td>
             <td>
         <div class="btn-group">
           <a class="btn btn-default btn-sm" href="<?php echo uri('admin/wechat_media/edit/' . $object->getId()); ?>"><i class="fa fa-edit"></i></a>

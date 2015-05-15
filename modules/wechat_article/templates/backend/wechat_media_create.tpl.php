@@ -40,6 +40,11 @@
   <label for='color'>color</label>
   <input value='<?php echo htmlentities(str_replace('\'', '"', ($object->isNew() ? (isset($_POST['color']) ? strip_tags($_POST['color']) : '') : $object->getColor()))) ?>' type='text' class='form-control' id='color' name='color' required size=10 />
 </div>
+  
+<div class='form-group'>
+  <label for='weight'>weight</label>
+  <input value='<?php echo htmlentities(str_replace('\'', '"', ($object->isNew() ? (isset($_POST['weight']) ? strip_tags($_POST['weight']) : '') : $object->getWeight()))) ?>' type='text' class='form-control' id='weight' name='weight' />
+</div>
 
   <input type="submit" name="submit" value="<?php i18n_echo(array(
       'en' => 'Create', 
