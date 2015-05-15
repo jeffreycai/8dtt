@@ -43,11 +43,11 @@ class WechatArticle extends BaseWechatArticle {
   }
   
   public function getImageWithText() {
-//    if (!empty($this->getDbFieldImage_with_text())) {
-//      return $this->getDbFieldImage_with_text();
-//    } else {
+    if (!empty($this->getDbFieldImage_with_text())) {
+      return $this->getDbFieldImage_with_text();
+    } else {
       return $this->make_image_with_text();
-//    }
+    }
   }
   
   public function make_image_with_text() {
