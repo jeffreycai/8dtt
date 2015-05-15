@@ -71,7 +71,7 @@ class WechatArticle extends BaseWechatArticle {
   
   private function addText(&$image, &$media) {
  
-    $char_per_line = floor((self::STORY_IMAGE_WIDTH - 2*self::STORY_IMAGE_TEXTPADDING) / self::STORY_IMAGE_FONTSIZE) - 12;
+    $char_per_line = floor((self::STORY_IMAGE_WIDTH - 2*self::STORY_IMAGE_TEXTPADDING) / self::STORY_IMAGE_FONTSIZE) - 13;
     
     $title_content = $this->getTitle() . "：";
     $title_line_num = ceil(mb_strlen($title_content, 'utf8') / $char_per_line);

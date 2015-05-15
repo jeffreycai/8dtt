@@ -42,6 +42,9 @@
           <div class="row">
             <div class="col-xs-12">
               <textarea class="form-control" rows="20">
+点击阅读今日头条：
+http://www.8diantoutiao.com
+
 <?php foreach ($articles as $article): ?>
 <?php echo htmlentities($article->getWechatMedia()->getName()) ?>:
 ---------------------------
@@ -51,6 +54,7 @@
 ===========================
 
 <?php endforeach; ?>
+更多新闻请访问：http://www.8diantoutiao.com
               </textarea>
             </div>
           </div>
