@@ -7,7 +7,7 @@
         $releases = $media->getLatestReleases(5);
         $release;
         foreach ($releases as $r) {
-          if (!is_over_eight() && $showall == false) {
+          if (!is_over_eight(-1) && $showall == false) {
             if ($r->getPublishedAt() < strtotime(date('Y-m-d'))) {
               $release = $r;
               break;

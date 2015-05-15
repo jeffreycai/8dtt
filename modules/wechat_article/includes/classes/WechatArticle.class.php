@@ -3,7 +3,7 @@ require_once "BaseWechatArticle.class.php";
 
 class WechatArticle extends BaseWechatArticle {
   const STORY_IMAGE_WIDTH = 1300;
-  const STORY_IMAGE_HEIGHT = 800;
+  const STORY_IMAGE_HEIGHT = 1300;
   const STORY_IMAGE_FONTSIZE = 36;
   const STORY_IMAGE_FONTSIZE_FOOTER = 24;
   const STORY_IMAGE_TEXTPADDING = 20;
@@ -43,11 +43,11 @@ class WechatArticle extends BaseWechatArticle {
   }
   
   public function getImageWithText() {
-    if (!empty($this->getDbFieldImage_with_text())) {
-      return $this->getDbFieldImage_with_text();
-    } else {
+//    if (!empty($this->getDbFieldImage_with_text())) {
+//      return $this->getDbFieldImage_with_text();
+//    } else {
       return $this->make_image_with_text();
-    }
+//    }
   }
   
   public function make_image_with_text() {
@@ -71,7 +71,7 @@ class WechatArticle extends BaseWechatArticle {
   
   private function addText(&$image, &$media) {
  
-    $char_per_line = floor((self::STORY_IMAGE_WIDTH - 2*self::STORY_IMAGE_TEXTPADDING) / self::STORY_IMAGE_FONTSIZE) - 13;
+    $char_per_line = floor((self::STORY_IMAGE_WIDTH - 2*self::STORY_IMAGE_TEXTPADDING) / self::STORY_IMAGE_FONTSIZE) - 9;
     
     $title_content = $this->getTitle() . "：";
     $title_line_num = ceil(mb_strlen($title_content, 'utf8') / $char_per_line);

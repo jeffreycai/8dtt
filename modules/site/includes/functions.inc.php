@@ -1,7 +1,9 @@
 <?php
-function is_over_eight() {
+function is_over_eight($difference = 0) {
+  $difference = $difference * 60; // differences to eight
+  
   $settings = Vars::getSettings();
-  return time() > strtotime(date('Y-m-d '.$settings['time_to_refresh'].':00:00'));
+  return time() > strtotime(date('Y-m-d '.$settings['time_to_refresh'].':00:00')) + $difference;
 }
 
 function check_timestamp_publishable($timestamp) {

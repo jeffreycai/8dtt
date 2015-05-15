@@ -9,7 +9,7 @@
   </div>
   <div class="row">
 <?php foreach ($releases as $release):
-  if (!is_over_eight() && $release->getPublishedAt() > strtotime(date('Y-m-d')) && !$showall) {
+  if (!is_over_eight(-1) && $release->getPublishedAt() > strtotime(date('Y-m-d')) && !$showall) {
     continue;
   }
 ?>
