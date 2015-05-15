@@ -79,7 +79,7 @@ class WechatRelease extends BaseWechatRelease {
   
   public function getTopStory() {
     global $mysqli;
-    $query = 'SELECT * FROM wechat_article WHERE id=' . $this->getTopStoryId() . ' ORDER BY weight';
+    $query = 'SELECT * FROM wechat_article WHERE id=' . $this->getTopStoryId();
     $result = $mysqli->query($query);
     if ($result && $b = $result->fetch_object()) {
       $obj = new WechatArticle();
