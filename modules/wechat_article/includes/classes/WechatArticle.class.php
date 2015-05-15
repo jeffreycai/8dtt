@@ -2,12 +2,12 @@
 require_once "BaseWechatArticle.class.php";
 
 class WechatArticle extends BaseWechatArticle {
-  const STORY_IMAGE_WIDTH = 650;
-  const STORY_IMAGE_HEIGHT = 400;
-  const STORY_IMAGE_FONTSIZE = 16;
-  const STORY_IMAGE_FONTSIZE_FOOTER = 10;
-  const STORY_IMAGE_TEXTPADDING = 10;
-  const STORY_IMAGE_TEXTLINEHEIGHT = 10;
+  const STORY_IMAGE_WIDTH = 1300;
+  const STORY_IMAGE_HEIGHT = 800;
+  const STORY_IMAGE_FONTSIZE = 36;
+  const STORY_IMAGE_FONTSIZE_FOOTER = 24;
+  const STORY_IMAGE_TEXTPADDING = 20;
+  const STORY_IMAGE_TEXTLINEHEIGHT = 20;
   const THUMBNAIL_IMAGE_WIDTH = 430;
   const THUMBNAIL_IMAGE_HEIGHT = 185;
   
@@ -121,9 +121,9 @@ class WechatArticle extends BaseWechatArticle {
             self::STORY_IMAGE_TEXTLINEHEIGHT*2 + 
             self::STORY_IMAGE_FONTSIZE_FOOTER +
             self::STORY_IMAGE_TEXTLINEHEIGHT*2;
-    $image = $image->resizeCanvas($image->getWidth(), $y+$got_canvase_height, 0, 0, $image->allocateColor(r($media->getColor()),g($media->getColor()),b($media->getColor())));
+    $image = $image->resizeCanvas($image->getWidth(), $y+$got_canvase_height, 0, 0, $image->allocateColor(255,255,255));
     $canvas = $image->getCanvas();
-    $canvas->useFont(MODULESROOT . "/site/assets/font.ttf", self::STORY_IMAGE_FONTSIZE_FOOTER, $image->allocateColor(255, 255, 255));
+    $canvas->useFont(MODULESROOT . "/site/assets/font.ttf", self::STORY_IMAGE_FONTSIZE_FOOTER, $image->allocateColor(r($media->getColor()),g($media->getColor()),b($media->getColor())));
     $canvas->writeText(self::STORY_IMAGE_TEXTPADDING, $y+2*self::STORY_IMAGE_TEXTPADDING, '完整新闻请移步： http://www.8diantoutiao.com');
     
     return $image;
