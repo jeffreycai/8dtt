@@ -101,10 +101,6 @@ SetEnvIf Host 8diantoutiao.websitesydney.net secure_content
 
 ## Prevent secure files to be access by public
 <Files ~ "(\.yml$)|(^\.)">
-  order allow,deny
-  deny from all
-  satisfy all
+  require all denied
 </Files>
-
-
 
