@@ -6,7 +6,7 @@ $articles = array();
 if ($date) {
   $timestamp = strtotime($date);
   global $mysqli;
-  $query = "SELECT * FROM wechat_release WHERE published_at > $timestamp AND published_at < " . ($timestamp + 24*60*60);
+  $query = "SELECT wr.* FROM wechat_release AS wr, wechat_media AS wm WHERE wr.wechat_media_id=wm.id AND wr.published_at > $timestamp AND wr.published_at < " . ($timestamp + 24*60*60) . " ORDER BY wm.weight";
   $result = $mysqli->query($query);
 
   while($result && $r = $result->fetch_object()) {

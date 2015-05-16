@@ -43,11 +43,11 @@ class WechatArticle extends BaseWechatArticle {
   }
   
   public function getImageWithText() {
-    if (!empty($this->getDbFieldImage_with_text())) {
-      return $this->getDbFieldImage_with_text();
-    } else {
+//    if (!empty($this->getDbFieldImage_with_text())) {
+//      return $this->getDbFieldImage_with_text();
+//    } else {
       return $this->make_image_with_text();
-    }
+//    }
   }
   
   public function make_image_with_text() {
@@ -89,6 +89,7 @@ class WechatArticle extends BaseWechatArticle {
     $canvas = $image->getCanvas();
     $canvas->useFont(MODULESROOT . "/site/assets/font.ttf", self::STORY_IMAGE_FONTSIZE, $image->allocateColor(255, 255, 255));
     $canvas->writeText(self::STORY_IMAGE_TEXTPADDING, $y+self::STORY_IMAGE_TEXTPADDING*3, $media->getName());
+    $canvas->writeText($image->getWidth() - self::STORY_IMAGE_TEXTPADDING - 7*self::STORY_IMAGE_FONTSIZE, $y+self::STORY_IMAGE_TEXTPADDING*3, date('Y-m-d', $this->getWechatRelease()->getPublishedAt()));
     $y = $y + $media_name_section_height;
     
     //// content canvas
