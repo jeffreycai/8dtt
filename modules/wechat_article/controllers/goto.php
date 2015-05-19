@@ -4,7 +4,15 @@ $article = WechatArticle::findById($id);
 if ($article) {
   $article->setClick($article->getClick() + 1);
   $article->save();
-  HTML::forward($article->getUrl());
+  
+  
+  $html = new HTML();
+  $html->renderOut('wechat_article/goto', array(
+      'article' => $article
+  ));
+  
+  
+//  HTML::forward($article->getUrl());
 } else {
   HTML::forward('site/404');
 }
