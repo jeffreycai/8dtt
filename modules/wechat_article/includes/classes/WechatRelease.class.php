@@ -92,4 +92,12 @@ class WechatRelease extends BaseWechatRelease {
   public function getWechatMedia() {
     return WechatMedia::findById($this->getWechatMediaId());
   }
+  
+  public function delete() {
+    $articles = $this->getArticles();
+    foreach ($articles as $article) {
+      $article->delete();
+    }
+    return parent::delete();
+  }
 }

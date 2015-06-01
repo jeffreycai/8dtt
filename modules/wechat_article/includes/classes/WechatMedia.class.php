@@ -30,6 +30,19 @@ class WechatMedia extends BaseWechatMedia {
     return WechatRelease::getLatestReleases($limit, $this->getId());
   }
   
+  public function getReleases() {
+    global $mysqli;
+    $query = "SELECT * FROM wechat_release WHERE wechat_media_id=" . $this->getId();
+    $result = $mysqli->query($query);
+    $rtn = array();
+    while ($result && $b = $result->fetch_object()) {
+      $obj = new WechatRelease();
+      DBObject::importQueryResultToDbObject($b, $obj);
+      $rtn[] = $obj;
+    }
+    return $rtn;
+  }
+  
   static function findAll($weight = 'weight') {
     global $mysqli;
     $query = "SELECT * FROM wechat_media" . ($weight ? " ORDER BY $weight" : "");
@@ -43,5 +56,13 @@ class WechatMedia extends BaseWechatMedia {
     }
     
     return $rtn;
+  }
+  
+  public function delete() {
+    $releases = $this->getReleases();
+    foreach ($releases as $release) {
+      $release->delete();
+    }
+    return parent::delete();
   }
 }

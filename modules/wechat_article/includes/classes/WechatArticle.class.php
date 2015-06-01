@@ -129,4 +129,11 @@ class WechatArticle extends BaseWechatArticle {
     
     return $image;
   }
+  
+  function delete() {
+    if (is_file(WEBROOT . DS . $this->getThumbnail())) {
+      @unlink(WEBROOT . DS . $this->getThumbnail());
+    }
+    return parent::delete();
+  }
 }
